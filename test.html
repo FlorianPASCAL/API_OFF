@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Activer caméra</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="barcode2.js"></script>
+    </head>
+    <body>
+        <input type="file" accept="image/*;capture=camera">
+        <device type="media" onchange="update(this.data)"></device>
+        <br>
+        <video autoplay></video>
+        <script>
+        // on active la caméra
+        const constraints = {
+          video: true,
+        };
+        const video = document.querySelector("video");
+        navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+          video.srcObject = stream;
+        });
+        </script>
+
+
+        <h3>PARTIE API Open Food Fact !</h3>
+        Code Barre test : 7613036249928<br>
+        Code Barre test : 5000159492737<br>
+
+        <input id="queryLoc" type="text" value="" />
+        <input type="button" value="APPEL API OFF" onclick="buttonClickGET()"/>
+        <p id="zone_api">Barcode</p>
+        <p id="zone_nom">Nom du Produit</p>
+        <p id="zone_lieu">Pays de Provenance</p>
+
+    </body>
+</html>
