@@ -1,1 +1,1 @@
-Il manque les 2 dossiers : .idea & venv
+Il manque les 2 dossiers pour la branche Python : .idea & venv
